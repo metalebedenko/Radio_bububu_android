@@ -1,0 +1,69 @@
+{
+  "checked_date": "2026-11-15",
+  "scope": "Official license texts only; no executable code downloaded",
+  "sources": [
+    {
+      "path": "model-licenses/LICENSE.Silero-CC-BY-NC-SA-4.0.txt",
+      "url": "https://raw.githubusercontent.com/snakers4/silero-models/master/LICENSE",
+      "bytes": 20849,
+      "sha256": "1349a4b6148492b44f629e64eed676612e234fe9a839e4f3b277c1482c8849f1",
+      "status": "OK"
+    },
+    {
+      "path": "model-licenses/LICENSE.GigaAM-punct",
+      "url": "https://huggingface.co/csukuangfj/sherpa-onnx-nemo-transducer-punct-giga-am-v3-russian-2025-12-16/resolve/a6039be7cee829a9044a69ac0ebaf1c191217c97/LICENSE",
+      "bytes": 1070,
+      "sha256": "f00de6715714c7a63d08639cdbfaa40224eefc407302614bd19f1a8b98c875aa",
+      "status": "OK"
+    },
+    {
+      "path": "licenses/LICENSE.PyTorch-2.1.0.txt",
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.1.0/LICENSE",
+      "bytes": 3293,
+      "sha256": "d63aaf3622186b2a761832a5704edeef1f25d08f5b9c50ac4e435befc8e348a8",
+      "status": "OK"
+    },
+    {
+      "path": "licenses/LICENSE.fbjni-0.2.2.txt",
+      "url": "https://raw.githubusercontent.com/facebookincubator/fbjni/v0.2.2/LICENSE",
+      "bytes": 10773,
+      "sha256": "f62d190c08e2b300b45780f0b3cabcacc78d0e373f7a0de79d31f82b084d35ea",
+      "status": "OK"
+    },
+    {
+      "path": "licenses/LICENSE.nativeloader-0.10.5.txt",
+      "url": "https://raw.githubusercontent.com/facebook/SoLoader/v0.10.5/LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "status": "OK"
+    },
+    {
+      "path": "licenses/LICENSE.sherpa-onnx-1.13.8.txt",
+      "url": "https://raw.githubusercontent.com/k2-fsa/sherpa-onnx/v1.13.8/LICENSE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "status": "OK"
+    },
+    {
+      "path": "licenses/LICENSE.ONNX-Runtime-1.28.2.txt",
+      "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/v1.28.2/LICENSE",
+      "bytes": 1073,
+      "sha256": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c",
+      "status": "OK"
+    },
+    {
+      "path": "licenses/ThirdPartyNotices.ONNX-Runtime-1.28.2.txt",
+      "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/v1.28.2/ThirdPartyNotices.txt",
+      "bytes": 325054,
+      "sha256": "0e07b95f3a8d6230037707c5c4a2b554d12c4cb67369669ac255635528ffcee2",
+      "status": "OK"
+    },
+    {
+      "path": "licenses/LICENSE.Kotlin-2.2.0.txt",
+      "url": "https://raw.githubusercontent.com/JetBrains/kotlin/v2.2.0/license/LICENSE.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "status": "OK"
+    }
+  ]
+}

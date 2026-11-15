@@ -1,0 +1,4 @@
+<resources>
+    <item name="ui_style_role" type="id" />
+    <item name="ui_applied_style" type="id" />
+</resources>

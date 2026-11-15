@@ -1,0 +1,145 @@
+BUBUBU_PRONUNCIATION	1	c10-speech-data-v2-reference
+# kind	key	reading	context	legacy	provenance
+SPELL	МВД	эм, вэ, дэ	ANY	1	ABBR-001
+SPELL	КВН	ка, вэ, эн	ANY	1	ABBR-002
+SPELL	ЮФУ	ю, эф, у	ANY	1	ABBR-003
+SPELL	ВТ	вэ, тэ	ANY	1	ABBR-004
+SPELL	ЮФО	ю, эф, о	ANY	1	ABBR-005
+SPELL	РФ	эр, эф	ANY	1	ABBR-006
+SPELL	ФСБ	эф, эс, бэ	ANY	0	ABBR-007
+SPELL	ГИБДД	гэ, и, бэ, дэ, дэ	ANY	0	ABBR-008
+SPELL	РЖД	эр, жэ, дэ	ANY	0	ABBR-009
+SPELL	СССР	эс, эс, эс, эр	ANY	0	ABBR-010
+SPELL	МГУ	эм, гэ, у	ANY	0	ABBR-011
+SPELL	ДНК	дэ, эн, ка	ANY	1	ABBR-012
+SPELL	ВПЧ	вэ, пэ, че	ANY	1	ABBR-013
+SPELL	ФРГ	эф, эр, гэ	ANY	0	ABBR-014
+SPELL	ГДР	гэ, дэ, эр	ANY	0	ABBR-015
+SPELL	СНГ	эс, эн, гэ	ANY	0	ABBR-016
+AMBIGUOUS	ЕАЭС	-	ANY	0	ABBR-017
+SPELL	ОДКБ	о, дэ, ка, бэ	ANY	0	ABBR-018
+SPELL	ЕС	е, эс	ANY	0	ABBR-019
+SPELL	США	эс, ша, а	ANY	1	ABBR-020
+SPELL	ООН	о, о, эн	ANY	0	ABBR-021
+SPELL	ОБСЕ	о, бэ, эс, е	ANY	0	ABBR-022
+WORD	ПАСЕ	пасэ	ANY	0	ABBR-023
+SPELL	ПВО	пэ, вэ, о	ANY	0	ABBR-024
+SPELL	ПРО	пэ, эр, о	ANY	0	ABBR-025
+SPELL	ВВС	вэ, вэ, эс	ANY	0	ABBR-026
+SPELL	ВМФ	вэ, эм, эф	ANY	0	ABBR-027
+SPELL	МЧС	эм, че, эс	ANY	0	ABBR-028
+SPELL	СКР	эс, ка, эр	ANY	0	ABBR-029
+WORD	ФСИН	фсин	ANY	0	ABBR-030
+SPELL	ФССП	эф, эс, эс, пэ	ANY	0	ABBR-031
+SPELL	ФТС	эф, тэ, эс	ANY	0	ABBR-032
+SPELL	ФНС	эф, эн, эс	ANY	0	ABBR-033
+WORD	ФАС	фас	ANY	0	ABBR-034
+SPELL	ЦБ	цэ, бэ	ANY	0	ABBR-035
+SPELL	ЦБР	цэ, бэ, эр	ANY	0	ABBR-036
+SPELL	ФРС	эф, эр, эс	ANY	0	ABBR-037
+SPELL	ЕЦБ	е, цэ, бэ	ANY	0	ABBR-038
+SPELL	МВФ	эм, вэ, эф	ANY	0	ABBR-039
+SPELL	ВВП	вэ, вэ, пэ	ANY	0	ABBR-040
+SPELL	ВНП	вэ, эн, пэ	ANY	0	ABBR-041
+SPELL	НДС	эн, дэ, эс	ANY	0	ABBR-042
+SPELL	НДФЛ	эн, дэ, эф, эл	ANY	0	ABBR-043
+SPELL	НДПИ	эн, дэ, пэ, и	ANY	0	ABBR-044
+SPELL	ОФЗ	о, эф, зэ	ANY	0	ABBR-045
+SPELL	ИИС	и, и, эс	ANY	0	ABBR-046
+SPELL	ИНН	и, эн, эн	ANY	0	ABBR-047
+SPELL	КПП	ка, пэ, пэ	ANY	0	ABBR-048
+SPELL	ОГРН	о, гэ, эр, эн	ANY	0	ABBR-049
+WORD	СНИЛС	снилс	ANY	0	ABBR-050
+SPELL	ОМС	о, эм, эс	ANY	0	ABBR-051
+SPELL	ДМС	дэ, эм, эс	ANY	0	ABBR-052
+SPELL	ПФР	пэ, эф, эр	ANY	0	ABBR-053
+SPELL	СФР	эс, эф, эр	ANY	0	ABBR-054
+SPELL	ПДД	пэ, дэ, дэ	ANY	0	ABBR-055
+SPELL	ДТП	дэ, тэ, пэ	ANY	0	ABBR-056
+SPELL	ЖКХ	жэ, ка, ха	ANY	0	ABBR-057
+SPELL	ТСЖ	тэ, эс, жэ	ANY	0	ABBR-058
+SPELL	МФЦ	эм, эф, цэ	ANY	0	ABBR-059
+WORD	ЕГЭ	егэ	ANY	0	ABBR-060
+WORD	ОГЭ	огэ	ANY	0	ABBR-061
+SPELL	ВПР	вэ, пэ, эр	ANY	0	ABBR-062
+WORD	ФГОС	фгос	ANY	0	ABBR-063
+SPELL	РГГУ	эр, гэ, гэ, у	ANY	0	ABBR-064
+WORD	РУДН	рудэн	ANY	0	ABBR-065
+SPELL	МФТИ	эм, эф, тэ, и	ANY	0	ABBR-066
+SPELL	ВШЭ	вэ, ша, э	ANY	0	ABBR-067
+SPELL	РФФИ	эр, эф, эф, и	ANY	0	ABBR-068
+SPELL	РНФ	эр, эн, эф	ANY	0	ABBR-069
+SPELL	РНК	эр, эн, ка	ANY	0	ABBR-070
+SPELL	АТФ	а, тэ, эф	ANY	0	ABBR-071
+SPELL	АДФ	а, дэ, эф	ANY	0	ABBR-072
+WORD	ВИЧ	вич	ANY	0	ABBR-073
+SPELL	ОРЗ	о, эр, зэ	ANY	0	ABBR-074
+SPELL	ЭКГ	э, ка, гэ	ANY	0	ABBR-075
+SPELL	ЭЭГ	э, э, гэ	ANY	0	ABBR-076
+SPELL	МРТ	эм, эр, тэ	ANY	0	ABBR-077
+SPELL	КТ	ка, тэ	ANY	0	ABBR-078
+SPELL	ПЦР	пэ, цэ, эр	ANY	0	ABBR-079
+SPELL	ИВЛ	и, вэ, эл	ANY	0	ABBR-080
+SPELL	ЖКТ	жэ, ка, тэ	ANY	0	ABBR-081
+SPELL	ЦНС	цэ, эн, эс	ANY	0	ABBR-082
+SPELL	ГМО	гэ, эм, о	ANY	0	ABBR-083
+SPELL	ИТ	и, тэ	ANY	0	ABBR-084
+SPELL	ИИ	и, и	ANY	0	ABBR-085
+WORD	СУБД	субэдэ	ANY	0	ABBR-086
+WORD	ОЗУ	озу	ANY	0	ABBR-087
+SPELL	ПЗУ	пэ, зэ, у	ANY	0	ABBR-088
+SPELL	ПЛИС	пэ, эл, и, эс	ANY	0	ABBR-089
+SPELL	АЦП	а, цэ, пэ	ANY	0	ABBR-090
+SPELL	ЧПУ	че, пэ, у	ANY	0	ABBR-091
+WORD	АЭС	аэс	ANY	0	ABBR-092
+WORD	ТЭС	тэс	ANY	0	ABBR-093
+WORD	НАТО	нато	ANY	0	ABBR-094
+WORD	ЮНЕСКО	юнэско	ANY	0	ABBR-095
+WORD	ЮНИСЕФ	юнисэф	ANY	0	ABBR-096
+WORD	ОПЕК	опек	ANY	0	ABBR-097
+WORD	НАСА	наса	ANY	0	ABBR-098
+WORD	ГЛОНАСС	глонасс	ANY	0	ABBR-099
+WORD	СПИД	спид	ANY	0	ABBR-100
+AMBIGUOUS	ОРВИ	-	ANY	0	ABBR-101
+WORD	УЗИ	узи	ANY	0	ABBR-102
+WORD	ЭКО	эко	ANY	0	ABBR-103
+WORD	БАД	бад	ANY	0	ABBR-104
+WORD	ГЭС	гэс	ANY	0	ABBR-105
+WORD	ТЭЦ	тэц	ANY	0	ABBR-106
+WORD	ГРЭС	грэс	ANY	0	ABBR-107
+WORD	ЛЭП	лэп	ANY	0	ABBR-108
+WORD	САПР	сапр	ANY	0	ABBR-109
+WORD	МИФИ	мифи	ANY	0	ABBR-110
+WORD	МГИМО	мгимо	ANY	0	ABBR-111
+WORD	НИИ	нии	ANY	0	ABBR-112
+WORD	СМИ	сми	ANY	0	ABBR-113
+WORD	МРОТ	мрот	ANY	0	ABBR-114
+WORD	ВУЗ	вуз	ANY	0	ABBR-115
+WORD	ГОСТ	гост	ANY	0	ABBR-116
+AMBIGUOUS	МИР	-	ANY	0	ABBR-117
+AMBIGUOUS	МИД	-	ANY	0	ABBR-118
+AMBIGUOUS	РАН	-	ANY	0	ABBR-119
+AMBIGUOUS	РАО	-	ANY	0	ABBR-120
+AMBIGUOUS	ПО	-	ANY	0	ABBR-121
+AMBIGUOUS	ДО	-	ANY	0	ABBR-122
+AMBIGUOUS	ОК	-	ANY	0	ABBR-123
+AMBIGUOUS	АО	-	ANY	0	ABBR-124
+AMBIGUOUS	ПАО	-	ANY	0	ABBR-125
+AMBIGUOUS	НИУ	-	ANY	0	ABBR-126
+AMBIGUOUS	СПбГУ	-	ANY	0	ABBR-127
+AMBIGUOUS	РАНХиГС	-	ANY	0	ABBR-128
+TEXT	т. е.	то есть	INLINE	0	TEXT-001
+TEXT	т.е.	то есть	INLINE	0	TEXT-002
+TEXT	т. к.	так как	INLINE	0	TEXT-003
+TEXT	т.к.	так как	INLINE	0	TEXT-004
+TEXT	и т. д.	и так далее	INLINE	0	TEXT-005
+TEXT	и т.д.	и так далее	INLINE	0	TEXT-006
+TEXT	и т. п.	и тому подобное	INLINE	0	TEXT-007
+TEXT	и т.п.	и тому подобное	INLINE	0	TEXT-008
+TEXT	и др.	и другие	INLINE	0	TEXT-009
+TEXT	и пр.	и прочие	INLINE	0	TEXT-010
+TEXT	напр.	например	DISABLED	0	TEXT-011
+TEXT	см. также	смотрите также	DISABLED	0	TEXT-012
+TEXT	См. также	Смотрите также	DISABLED	0	TEXT-013
+TEXT	См.	Смотрите.	REFERENCE_NEXT_SENTENCE	0	TEXT-014;OWNER-2026-10-28-REFERENCE
+TEXT	см.	Смотрите.	REFERENCE_NEXT_SENTENCE	0	OWNER-2026-10-28-REFERENCE

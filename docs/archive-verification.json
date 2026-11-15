@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-15",
+  "stage": "source-only baseline from sanitized directory",
+  "baseline": {
+    "tests": 938,
+    "passed": 931,
+    "skipped": 7,
+    "errors": 0,
+    "failures": 0,
+    "lint": "PASS",
+    "assemble": "PASS"
+  },
+  "signing": "fresh standard Android debug; original keystore absent",
+  "experimental": "PENDING",
+  "device_tests": "NOT_RUN (archival task, no phone operation)"
+}

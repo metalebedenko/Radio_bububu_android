@@ -1,0 +1,6 @@
+# This synthetic fixture is byte-pinned; its final space is intentional.
+app/src/androidTest/assets/qa45-source-fixture/long-body.txt whitespace=-blank-at-eol
+# Preserve the upstream Windows wrapper line endings.
+gradlew.bat -text whitespace=cr-at-eol
+# Keep the exact upstream license text.
+app/src/main/assets/speech/notices/CC-BY-SA-4.0.txt whitespace=-blank-at-eof

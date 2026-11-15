@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "checked_date": "2026-11-15",
+  "inputs": [
+    {
+      "destination": ".private/vendor/pytorch/pytorch_android-2.1.0.aar",
+      "bytes": 94795169,
+      "sha256": "c1a5efebb598aaff1a80b3c40735615b9a5b83bc92f4729e2c53110b72b5f0c4",
+      "url": "https://repo.maven.apache.org/maven2/org/pytorch/pytorch_android/2.1.0/pytorch_android-2.1.0.aar"
+    },
+    {
+      "destination": ".private/vendor/pytorch/fbjni-java-only-0.2.2.jar",
+      "bytes": 12024,
+      "sha256": "7904e1c270fc2efafa7232001fbd5adb0521f624ee3a6e548d1efbcb5f30bcdf",
+      "url": "https://repo.maven.apache.org/maven2/com/facebook/fbjni/fbjni-java-only/0.2.2/fbjni-java-only-0.2.2.jar"
+    },
+    {
+      "destination": ".private/vendor/pytorch/nativeloader-0.10.5.jar",
+      "bytes": 3158,
+      "sha256": "971ded86009c0ac56fb2275e128f852e7dcbc41a40cd799688f8a1aebde5195d",
+      "url": "https://repo.maven.apache.org/maven2/com/facebook/soloader/nativeloader/0.10.5/nativeloader-0.10.5.jar"
+    },
+    {
+      "destination": ".private/vendor/sherpa/libs/sherpa-onnx-1.13.8.jar",
+      "bytes": 238706,
+      "sha256": "8af5aa647494ec9cb6596959d6d20864377cf4a9dedf1c1b178d936bfb7cea95",
+      "archive": {
+        "url": "https://github.com/k2-fsa/sherpa-onnx/releases/download/v1.13.8/sherpa-onnx-1.13.8.aar",
+        "bytes": 50129134,
+        "sha256": "633c24321e06b1fe79feafa03ea16cbc0f8a286641e2da3559bac91bdb13bd96"
+      },
+      "member": "classes.jar"
+    },
+    {
+      "destination": ".private/vendor/sherpa/jni/arm64-v8a/libonnxruntime.so",
+      "bytes": 22249560,
+      "sha256": "33847ad43bffe204699fd4a27f7f3603452a8cdaf2f9a44983a0bc31ffcf2da1",
+      "archive": {
+        "url": "https://github.com/k2-fsa/sherpa-onnx/releases/download/v1.13.8/sherpa-onnx-1.13.8.aar",
+        "bytes": 50129134,
+        "sha256": "633c24321e06b1fe79feafa03ea16cbc0f8a286641e2da3559bac91bdb13bd96"
+      },
+      "member": "jni/arm64-v8a/libonnxruntime.so"
+    },
+    {
+      "destination": ".private/vendor/sherpa/jni/arm64-v8a/libsherpa-onnx-jni.so",
+      "bytes": 4771760,
+      "sha256": "3c6492ea91ea68fd3b72b9495efdde6dd913f6b58c387e3b07389cf335f4d26f",
+      "archive": {
+        "url": "https://github.com/k2-fsa/sherpa-onnx/releases/download/v1.13.8/sherpa-onnx-1.13.8.aar",
+        "bytes": 50129134,
+        "sha256": "633c24321e06b1fe79feafa03ea16cbc0f8a286641e2da3559bac91bdb13bd96"
+      },
+      "member": "jni/arm64-v8a/libsherpa-onnx-jni.so"
+    }
+  ]
+}

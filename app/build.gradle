@@ -1,0 +1,163 @@
+plugins { id 'com.android.application' }
+// Public clones use Android's standard debug signing. An existing identity is opt-in.
+def localSigningPath = providers.gradleProperty('bububuSigningProperties').orNull
+def localSigning = new Properties()
+File localSigningFile = null
+File localSigningStore = null
+if (localSigningPath != null) {
+    if (localSigningPath.trim().isEmpty()) throw new GradleException('bububuSigningProperties must name a properties file')
+    localSigningFile = rootProject.file(localSigningPath).canonicalFile
+    if (!localSigningFile.isFile()) throw new GradleException('Explicit signing properties file is missing')
+    localSigningFile.withInputStream { localSigning.load(it) }
+    ['storeFile', 'storePassword', 'keyAlias', 'keyPassword'].each { name ->
+        if (localSigning.getProperty(name) == null || localSigning.getProperty(name).isEmpty()) {
+            throw new GradleException("Explicit signing properties require ${name}")
+        }
+    }
+    File requestedStore = new File(localSigning.getProperty('storeFile'))
+    localSigningStore = (requestedStore.isAbsolute() ? requestedStore : new File(localSigningFile.parentFile, requestedStore.path)).canonicalFile
+    if (!localSigningStore.isFile()) throw new GradleException('Explicit signing keystore is missing')
+}
+def internalQaId=providers.gradleProperty('bububuInternalQaApplicationId').orNull
+def isolatedSetupQa=internalQaId!=null
+if(providers.gradleProperty('bububuIsolatedSetupQa').orNull=='true'&&!isolatedSetupQa)throw new GradleException('A fresh job-specific bububuInternalQaApplicationId is required')
+if(isolatedSetupQa&&!internalQaId.matches('ru\\.bububu\\.radio\\.internalqa45\\.j[a-z0-9]+'))throw new GradleException('Invalid job-specific QA applicationId')
+android {
+    namespace = 'ru.bububu.radio'
+    compileSdk = 36
+    buildToolsVersion = '36.0.0'
+    defaultConfig {
+        applicationId = isolatedSetupQa ? internalQaId : 'ru.bububu.radio.test'
+        minSdk = 26
+        targetSdk = 36
+        versionCode = 60
+        versionName = '0.3-ux3'
+        testInstrumentationRunner = isolatedSetupQa ? 'ru.bububu.radio.Unique45FixtureRunner' : 'androidx.test.runner.AndroidJUnitRunner'
+    }
+    if (localSigningFile != null) {
+        signingConfigs {
+            acceptedMain {
+                storeFile = localSigningStore
+                storePassword = localSigning.getProperty('storePassword')
+                keyAlias = localSigning.getProperty('keyAlias')
+                keyPassword = localSigning.getProperty('keyPassword')
+            }
+        }
+        buildTypes { debug { signingConfig = signingConfigs.acceptedMain } }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+        coreLibraryDesugaringEnabled true
+    }
+    buildFeatures { buildConfig = true }
+    flavorDimensions += 'models'
+    productFlavors {
+        baseline { dimension 'models'; buildConfigField 'boolean', 'MODEL_EXPERIMENT', 'false' }
+        experimental { dimension 'models'; minSdk = 28; versionNameSuffix '-models'; ndk { abiFilters 'arm64-v8a' }; buildConfigField 'boolean', 'MODEL_EXPERIMENT', 'true' }
+    }
+    packaging { jniLibs { useLegacyPackaging = false; keepDebugSymbols.add('**/*.so') } }
+
+    lint { abortOnError = true; checkReleaseBuilds = true }
+}
+def acceptedNative=rootProject.file('.private')
+def torchStage=new File(acceptedNative,'vendor/pytorch')
+def asrStage=new File(acceptedNative,'vendor/sherpa')
+android.sourceSets.experimental.jniLibs.srcDirs=[new File(asrStage,'jni')]
+android.sourceSets.experimental.assets.srcDirs=[new File(asrStage,'licenses')]
+// Exact private, previously validated packs; weights and notices staging stay outside Git/iCloud.
+def bundledStage=new File(acceptedNative,'assets')
+android.sourceSets.experimental.assets.srcDirs += [bundledStage]
+if(isolatedSetupQa)android.sourceSets.experimental.manifest.srcFile file('src/isolatedQa/AndroidManifest.xml')
+android.androidResources.noCompress += ['zip']
+android.sourceSets.test.resources.srcDirs += ['src/main/assets']
+
+static String sha256(File input) {
+    def digest = java.security.MessageDigest.getInstance('SHA-256')
+    input.withInputStream { stream ->
+        byte[] buffer = new byte[65536]
+        int count
+        while ((count = stream.read(buffer)) != -1) {
+            digest.update(buffer, 0, count)
+        }
+    }
+    return digest.digest().encodeHex().toString()
+}
+
+// Gradle's module verification does not cover local file dependencies or jniLibs.
+def runtimePins = [
+    '.private/vendor/pytorch/pytorch_android-2.1.0.aar': 'c1a5efebb598aaff1a80b3c40735615b9a5b83bc92f4729e2c53110b72b5f0c4',
+    '.private/vendor/pytorch/fbjni-java-only-0.2.2.jar': '7904e1c270fc2efafa7232001fbd5adb0521f624ee3a6e548d1efbcb5f30bcdf',
+    '.private/vendor/pytorch/nativeloader-0.10.5.jar': '971ded86009c0ac56fb2275e128f852e7dcbc41a40cd799688f8a1aebde5195d',
+    '.private/vendor/sherpa/libs/sherpa-onnx-1.13.8.jar': '8af5aa647494ec9cb6596959d6d20864377cf4a9dedf1c1b178d936bfb7cea95',
+    '.private/vendor/sherpa/jni/arm64-v8a/libonnxruntime.so': '33847ad43bffe204699fd4a27f7f3603452a8cdaf2f9a44983a0bc31ffcf2da1',
+    '.private/vendor/sherpa/jni/arm64-v8a/libsherpa-onnx-jni.so': '3c6492ea91ea68fd3b72b9495efdde6dd913f6b58c387e3b07389cf335f4d26f'
+]
+def verifyRuntime = tasks.register('verifyExperimentalRuntimeInputs') {
+    doLast {
+        runtimePins.each { path, expected ->
+            File input = rootProject.file(path)
+            if (!input.isFile()) throw new GradleException("Missing experimental runtime input: ${path}")
+            if (sha256(input) != expected) throw new GradleException("Experimental runtime SHA-256 mismatch: ${path}")
+        }
+    }
+}
+tasks.register('verifyBundledModelAssets') {
+    doLast {
+        def pins=['silero-accepted-v1.zip':[151435177L,'c97eeb96cd2b4e2806f056a515e2f2f48600041e59e9e70e812d274757c1587f'],
+                  'gigaam-accepted-v1.zip':[231898104L,'3461c6dead251a85db28c6ca7edce083ccc5e72a4514092618d54f4fbe944df2']]
+        pins.each { name,pin ->
+            def file=new File(bundledStage,'bundled-models/'+name)
+            if(!file.isFile() || file.length()!=pin[0])throw new GradleException('Missing exact private bundled pack: '+name)
+            if(sha256(file)!=pin[1])throw new GradleException('Bundled pack hash mismatch: '+name)
+        }
+        ['NOTICE.txt','LICENSE.GigaAM-punct'].each { name ->
+            if(!new File(bundledStage,'model-licenses/'+name).isFile())throw new GradleException('Missing bundled model notice: '+name)
+        }
+    }
+}
+tasks.configureEach {
+    if (name in ['preExperimentalDebugBuild', 'preExperimentalReleaseBuild']) dependsOn(verifyRuntime)
+    if (name == 'mergeExperimentalDebugAssets') dependsOn('verifyBundledModelAssets')
+}
+dependencies {
+    experimentalImplementation files(new File(torchStage,'pytorch_android-2.1.0.aar'),new File(torchStage,'fbjni-java-only-0.2.2.jar'),new File(torchStage,'nativeloader-0.10.5.jar'))
+    experimentalImplementation files(new File(asrStage,'libs/sherpa-onnx-1.13.8.jar'))
+
+    implementation 'com.squareup.okhttp3:okhttp:5.4.0'
+    implementation 'org.jsoup:jsoup:1.23.2'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs_nio:2.1.5'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'com.squareup.okhttp3:mockwebserver3:5.4.0'
+    testImplementation 'com.squareup.okhttp3:okhttp-tls:5.4.0'
+    androidTestImplementation 'androidx.test:runner:1.6.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+}
+dependencyLocking { lockAllConfigurations() }
+
+// Fail on missing state only for the shipped variant and its relevant test classpaths.
+// Other flavors/internal configurations retain Gradle's default locking behavior.
+def requiredExperimentalLocks = [
+    'experimentalDebugCompileClasspath', 'experimentalDebugRuntimeClasspath',
+    'experimentalDebugUnitTestCompileClasspath', 'experimentalDebugUnitTestRuntimeClasspath',
+    'experimentalDebugAndroidTestCompileClasspath', 'experimentalDebugAndroidTestRuntimeClasspath'
+] as Set
+configurations.configureEach { configuration ->
+    if (requiredExperimentalLocks.contains(configuration.name)) {
+        configuration.incoming.beforeResolve {
+            if (!gradle.startParameter.writeDependencyLocks) {
+                def state = file('gradle.lockfile')
+                def present = state.isFile() && state.readLines('UTF-8').any { line ->
+                    !line.startsWith('#') && line.contains('=') &&
+                        line.substring(line.indexOf('=') + 1).split(',').contains(configuration.name)
+                }
+                if (!present) throw new GradleException("Missing dependency lock state for ${configuration.name}; regenerate selected locks offline without upgrading dependencies")
+            }
+        }
+    }
+}
+
+// Shared by HOST tests and the instrumentation APK only; never packaged in the application.
+android.sourceSets.test.java.srcDirs += ['src/testSupport/java']
+android.sourceSets.androidTest.java.srcDirs += ['src/testSupport/java']
+android.sourceSets.test.resources.srcDirs += ['src/androidTest/assets']

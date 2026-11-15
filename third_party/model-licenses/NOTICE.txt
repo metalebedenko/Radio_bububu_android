@@ -1,0 +1,62 @@
+Radio Bububu Android — archived noncommercial research prototype
+Model notices, checked 15 November 2026
+
+These notices apply to the exact model archives distributed alongside this
+directory. They do not replace the separate MIT license of the original
+application code or the licenses of third-party runtime libraries.
+
+SILERO RUSSIAN TEXT TO SPEECH
+
+Silero Team and silero-models contributors
+Project: https://github.com/snakers4/silero-models
+Model: v5_6_ru; selected voice: eugene; application sample rate: 24000 Hz
+Original model: https://models.silero.ai/models/tts/ru/v5_6_ru.pt
+Upstream license: https://github.com/snakers4/silero-models/blob/master/LICENSE
+
+License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+(CC BY-NC-SA 4.0). Full text accompanies this notice in
+LICENSE.Silero-CC-BY-NC-SA-4.0.txt and is also available at:
+https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en
+
+Project changes: local full-JIT export split into core.pt, homosolver.pt,
+accentor.pt and resources.json for the Android adapter. The eugene voice was
+not retrained. The exported model data and any project adaptations of that
+data are provided under CC BY-NC-SA 4.0, including the same attribution,
+NonCommercial and ShareAlike conditions. This is an unofficial integration.
+Neither the project nor its authors claim endorsement by Silero.
+
+The model is provided as-is, without warranties. Retain attribution, license
+notices, source links and modification statements. Noncommercial sharing is
+permitted under the license terms. This archive grants no commercial model
+license and imposes no additional restrictions on rights granted by CC.
+
+Exact archive: silero-accepted-v1.zip
+Bytes: 151435177
+SHA-256: c97eeb96cd2b4e2806f056a515e2f2f48600041e59e9e70e812d274757c1587f
+
+GIGAAM SPEECH RECOGNITION
+
+Copyright (c) 2024 GigaChat Team
+Project: https://github.com/salute-developers/GigaAM
+Model family: GigaAM-v3 E2E RNNT
+License: MIT. The full copyright and permission notice accompanies this file
+as LICENSE.GigaAM-punct.
+
+Used ONNX conversion by csukuangfj:
+https://huggingface.co/csukuangfj/sherpa-onnx-nemo-transducer-punct-giga-am-v3-russian-2025-12-16
+Exact conversion revision: a6039be7cee829a9044a69ac0ebaf1c191217c97
+License source:
+https://huggingface.co/csukuangfj/sherpa-onnx-nemo-transducer-punct-giga-am-v3-russian-2025-12-16/blob/a6039be7cee829a9044a69ac0ebaf1c191217c97/LICENSE
+
+Project packaging contains the unchanged encoder.int8.onnx, decoder.onnx,
+joiner.onnx and tokens.txt from that conversion plus a project manifest.
+The original checkpoint-to-ONNX equivalence was not independently proved
+by this archive. The exact conversion file hashes are pinned in source.
+
+Exact archive: gigaam-accepted-v1.zip
+Bytes: 231898104
+SHA-256: 3461c6dead251a85db28c6ca7edce083ccc5e72a4514092618d54f4fbe944df2
+
+Keep this notice and the two accompanying licenses with copies of the model
+archives. The upstream authors retain rights in their respective materials.
+Rights in article text, recordings and other model inputs are separate.

@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "archive": {
+    "name": "RadioBububu-models-archive-2026-11-15.zip",
+    "url": "https://github.com/metalebedenko/Radio_bububu_android/releases/download/archive-2026-11-15/RadioBububu-models-archive-2026-11-15.zip",
+    "size": 383359038,
+    "sha256": "9e025533ef3c4d0266985d02ce6d756d30eab9b5778e38ae70f475d6de4ec7f4"
+  },
+  "files": [
+    {
+      "path": "bundled-models/gigaam-accepted-v1.zip",
+      "size": 231898104,
+      "sha256": "3461c6dead251a85db28c6ca7edce083ccc5e72a4514092618d54f4fbe944df2"
+    },
+    {
+      "path": "bundled-models/silero-accepted-v1.zip",
+      "size": 151435177,
+      "sha256": "c97eeb96cd2b4e2806f056a515e2f2f48600041e59e9e70e812d274757c1587f"
+    },
+    {
+      "path": "model-licenses/LICENSE.GigaAM-punct",
+      "size": 1070,
+      "sha256": "f00de6715714c7a63d08639cdbfaa40224eefc407302614bd19f1a8b98c875aa"
+    },
+    {
+      "path": "model-licenses/LICENSE.Silero-CC-BY-NC-SA-4.0.txt",
+      "size": 20849,
+      "sha256": "1349a4b6148492b44f629e64eed676612e234fe9a839e4f3b277c1482c8849f1"
+    },
+    {
+      "path": "model-licenses/NOTICE.txt",
+      "size": 3070,
+      "sha256": "e2d1d2490ead97d485fd43c02cc82528f967a341d93b936ae6bc3151427dbf52"
+    }
+  ]
+}
