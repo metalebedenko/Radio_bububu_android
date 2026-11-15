@@ -66,3 +66,13 @@ Once a control set was revealed, it became a regression set. It was no longer de
 The public package is intended to preserve application sources, own regression tests, pinned build configuration, dependency notices and a concise record of the experiment. It excludes signing secrets, user audio and text, working caches, private HTTP captures and complete copies of third-party articles.
 
 Screenshots must name the actual build they show. Design mockups must be labelled as mockups. A successful source build, a generated WAV and physical sound from the phone are distinct pieces of evidence.
+
+## Earlier interface
+
+The archive release includes `RadioBububu-legacy-ui-source.tar.gz`, a sanitized source snapshot of the interface before UX3. Its original build settings are retained for reference; that historical variant was not rebuilt during this publication. Working journals, signing keys and local metadata are excluded. Use the current `main` branch and BUILDING instructions for the reproducible archive build.
+
+## Archive build verification · 15 November 2026
+
+The sanitized tree built successfully with a standard Android debug identity and no original signing key. Baseline: 931 passed, 7 skipped. Experimental: 1,039 passed, 10 skipped. Both lint tasks, both application APKs, the experimental instrumentation APK and exact model verification passed. Runtime inputs were restored from official distributions and checked against the existing pins. Two previously unlisted Maven metadata files were independently verified and added to the checksum manifest; no version or existing checksum was changed.
+
+See [archive-verification.json](archive-verification.json) for the publication checks. No phone was used during this archival task; these checks do not complete the historical audio acceptance.

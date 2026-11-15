@@ -1,16 +1,31 @@
 {
   "date": "2026-11-15",
-  "stage": "source-only baseline from sanitized directory",
+  "scope": "Sanitized source tree, ordinary debug signing, no original private signing key",
   "baseline": {
     "tests": 938,
-    "passed": 931,
-    "skipped": 7,
-    "errors": 0,
     "failures": 0,
+    "errors": 0,
+    "skipped": 7,
+    "passed": 931,
+    "suites": 98,
     "lint": "PASS",
     "assemble": "PASS"
   },
-  "signing": "fresh standard Android debug; original keystore absent",
-  "experimental": "PENDING",
-  "device_tests": "NOT_RUN (archival task, no phone operation)"
+  "experimental": {
+    "tests": 1049,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 10,
+    "passed": 1039,
+    "suites": 122,
+    "lint": "PASS",
+    "assemble": "PASS"
+  },
+  "runtime_restore": "PASS: six exact native files restored from official Maven and sherpa distributions",
+  "model_restore": "PASS: two exact ZIPs and companion licenses restored from the prepared release bundle",
+  "restore_helper_self_tests": 9,
+  "pinned_model_checks": "PASS",
+  "instrumentation_apk_compiled": "PASS",
+  "device_tests": "NOT_RUN: no device operation during archiving",
+  "clean_github_clone": "PENDING"
 }
