@@ -8,4 +8,4 @@ The public repository preserves the implementation and research approach. It doe
 
 Start with [README.md](README.md), [docs/BUILDING.md](docs/BUILDING.md) and [docs/ARCHIVE.md](docs/ARCHIVE.md). Build/release verification for the archived publication must be recorded separately from the historical development checks.
 
-Archive publication checks on 15 November 2026: baseline 931 passed / 7 skipped, experimental 1,039 passed / 10 skipped; builds, lint and pinned model checks passed with restored inputs and ordinary debug signing. Publication and fresh GitHub clone verification are recorded in `docs/archive-verification.json`.
+Archive publication checks on 15 November 2026: baseline 931 passed / 7 skipped, experimental 1,039 passed / 10 skipped; builds, lint and pinned model checks passed with restored inputs and ordinary debug signing. The public release was downloaded and verified, and a fresh GitHub clone rebuilt successfully. Details are recorded in `docs/archive-verification.json`. The project is archived; no active development remains.

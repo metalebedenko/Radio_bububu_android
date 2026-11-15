@@ -4,7 +4,7 @@
 
 - JDK 17 (`JAVA_HOME` or `java` on `PATH`).
 - Android SDK platform 36 and Build Tools 36.0.0 (`ANDROID_HOME`, or a local `local.properties` file).
-- Python 3.10+ for the optional model/runtime restoration tool.
+- Python 3.9+ for the optional model/runtime restoration tool.
 - Gradle Wrapper 8.13 and Android Gradle Plugin 8.13.2 are pinned. The first build needs network access for the wrapper and Maven dependencies. Later builds can use `--offline` with a populated cache.
 
 No account, API key, private signing key or original developer machine is required.
@@ -17,7 +17,7 @@ The baseline flavor uses the Android speech engine and omits native Silero/GigaA
 ./tools/build-local.sh :app:testBaselineDebugUnitTest :app:lintBaselineDebug :app:assembleBaselineDebug
 ```
 
-Output: `build/app/outputs/apk/baseline/debug/app-baseline-debug.apk`.
+Output: `build/app/outputs/apk/baseline/debug/app-baseline-debug.apk`. On Windows, run `gradlew.bat` with the same tasks instead of the shell wrapper.
 
 ## Experimental: reproduce the local-model configuration
 

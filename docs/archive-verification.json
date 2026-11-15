@@ -27,5 +27,24 @@
   "pinned_model_checks": "PASS",
   "instrumentation_apk_compiled": "PASS",
   "device_tests": "NOT_RUN: no device operation during archiving",
-  "clean_github_clone": "PENDING"
+  "clean_github_clone": {
+    "source_commit": "6249b2d1fccc4f25d402c484c062f3f2a38d65d2",
+    "app_tree": "7ead554ece6e28a25eb2116afed907d3218e8c98",
+    "models_from_public_release": "PASS",
+    "native_inputs_official_pinned": "PASS",
+    "fresh_clone_assemble": "PASS",
+    "model_verification": "PASS",
+    "original_signing_key": "NOT_PRESENT",
+    "device_tests": "NOT_RUN"
+  },
+  "public_release_download": {
+    "url": "https://github.com/metalebedenko/Radio_bububu_android/releases/download/archive-2026-11-15/RadioBububu-models-archive-2026-11-15.zip",
+    "bytes": 383359038,
+    "sha256": "9e025533ef3c4d0266985d02ce6d756d30eab9b5778e38ae70f475d6de4ec7f4",
+    "download": "8 bounded HTTP ranges; full reassembly verified",
+    "restore": "PASS"
+  },
+  "legacy_source_download": "PASS: public release bytes match pinned SHA-256",
+  "public_source_scan": "PASS: no unreviewed secret or personal-machine findings",
+  "cleanup_scope": "Local Android source directory, its three Downloads APKs, project cache and task scratch copies; shared toolchains and other projects excluded"
 }
